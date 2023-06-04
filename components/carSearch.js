@@ -8,7 +8,7 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const CarSearch = () => {
   const [id, setId] = useState('');
 
-  const { data, error, isValidating } = useSWR(id ? `http://localhost:3000/api/cars/${id}` : null, fetcher);
+  const { data, error, isValidating } = useSWR(id ? `/api/cars/${id}` : null, fetcher);
 
   const handleSubmit = (event) => {
     event.preventDefault();
